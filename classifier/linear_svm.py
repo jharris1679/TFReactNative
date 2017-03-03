@@ -14,6 +14,8 @@
 # We know here that x and y are linearly seperable
 # for I. setosa classification.
 
+import matplotlib
+matplotlib.use("AGG")
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
@@ -128,7 +130,8 @@ plt.legend(loc='lower right')
 plt.title('Sepal Length vs Pedal Width')
 plt.xlabel('Pedal Width')
 plt.ylabel('Sepal Length')
-plt.show()
+plt.savefig("plots/scatter_and_line.png")
+plt.close()
 
 # Plot train/test accuracies
 plt.plot(train_accuracy, 'k-', label='Training Accuracy')
@@ -137,11 +140,14 @@ plt.title('Train and Test Set Accuracies')
 plt.xlabel('Generation')
 plt.ylabel('Accuracy')
 plt.legend(loc='lower right')
-plt.show()
+plt.savefig("plots/train_and_test_accuracies.png")
+plt.close()
 
 # Plot loss over time
 plt.plot(loss_vec, 'k-')
 plt.title('Loss per Generation')
 plt.xlabel('Generation')
 plt.ylabel('Loss')
-plt.show()
+plt.savefig("plots/loss.png")
+plt.close()
+
